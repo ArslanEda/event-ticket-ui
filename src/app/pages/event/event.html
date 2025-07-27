@@ -1,0 +1,40 @@
+<div class="event-section">
+  <h2>ETKİNLİKLER</h2>
+
+  <div class="carousel-wrapper">
+    <button class="nav-btn left" (click)="scrollLeft()">‹</button>
+
+    <div class="carousel" #carousel>
+      <div *ngFor="let event of events" class="event-card">
+        <h3 class="event-title">{{ event.name.toUpperCase() }}</h3>
+        <img [src]="getImage(event.category)" alt="Etkinlik Görseli" />
+
+        <div class="event-details">
+          <p>{{ event.location }}</p>
+          <p>{{ event.startDate | date: 'dd MMMM yyyy':'':'tr' }}</p>
+          <p>{{ event.startDate | date: 'HH:mm' }}</p>
+        </div>
+
+        <form [formGroup]="quantityForm[event.eventId]" class="price-bar">
+          <strong>{{ event.price | currency:'TRY':'symbol':'1.0-0' }}</strong>
+          <input type="number" formControlName="quantity" min="1" [max]="event.availableCapacity" />
+          <button type="submit" (click)="handlePurchase(event.eventId)">Bilet Al</button>
+        </form>
+      </div>
+    </div>
+
+    <button class="nav-btn right" (click)="scrollRight()">›</button>
+  </div>
+
+  <div class="guest-popup" *ngIf="showGuestPopup">
+    <form [formGroup]="guestForm">
+      <h3>Üye Olmadan Satın Al</h3>
+      <input formControlName="fullName" placeholder="Ad Soyad" />
+      <input formControlName="email" placeholder="E-posta" />
+      <div class="popup-buttons">
+        <button type="button" (click)="confirmGuestPurchase()">Satın Al</button>
+        <button type="button" (click)="closePopup()">İptal</button>
+      </div>
+    </form>
+  </div>
+</div>

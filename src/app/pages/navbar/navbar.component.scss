@@ -1,0 +1,36 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 50px;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.921);
+  backdrop-filter: blur(8px);
+  color: white;
+
+  .logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+  }
+
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+
+    li a {
+      text-decoration: none;
+      color: white;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:hover {
+        color: hsl(226, 100%, 82%);
+      }
+    }
+  }
+}

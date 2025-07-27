@@ -1,0 +1,18 @@
+.account-section {
+  padding: 120px;
+  max-width: 750px;
+  margin: auto;
+
+
+  .ticket-card {
+    background: #fff4d4;
+    border: 1px solid #f0c36d;
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+
+    p {
+      margin: 5px 0;
+    }
+  }
+}

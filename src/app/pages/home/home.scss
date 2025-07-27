@@ -1,0 +1,69 @@
+.gif-container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+
+  .background-img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); 
+    top: 0;
+    left: 0;
+    z-index: 2;
+  }
+
+  .content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    padding: 0 20px;
+
+    h1 {
+      font-size: 4.5rem;
+      font-weight: 900;
+      line-height: 1.2;
+    }
+
+    .slogan {
+      font-size: 3rem;
+      color: #d1a055;
+      font-style: italic;
+      margin: 1rem 0 2rem;
+    }
+
+    .ticket-button {
+      background-color: #d1a055;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-weight: 900;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #b7893f;
+      }
+    }
+  }
+}

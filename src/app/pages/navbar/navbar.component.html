@@ -1,0 +1,18 @@
+<nav class="navbar">
+  <div class="logo"><a routerLink="/events">EventX</a></div>
+
+  <ul class="nav-links">
+    <li><a routerLink="/home">Anasayfa</a></li>
+    <li><a routerLink="/about">Hakkımızda</a></li>
+
+    <ng-container *ngIf="!isLoggedIn()">
+      <li><a routerLink="/login">Giriş Yap / Üye Ol</a></li>
+    </ng-container>
+
+    <ng-container *ngIf="isLoggedIn()">
+      <li *ngIf="isAdmin()"><a routerLink="/admin">Admin Paneli</a></li>
+      <li><a routerLink="/account">Siparişlerim</a></li>
+      <li><a (click)="logout(); $event.preventDefault()">Çıkış Yap</a></li>
+    </ng-container>
+  </ul>
+</nav>

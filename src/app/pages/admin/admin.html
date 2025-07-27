@@ -1,0 +1,52 @@
+<div class="admin-panel">
+  <h1>Admin Paneli</h1>
+
+  <div class="card-grid">
+    <div class="admin-card">
+      <h2>Etkinlik Ekle</h2>
+      <form [formGroup]="eventForm" (ngSubmit)="insertEvent()">
+        <input formControlName="name" placeholder="Etkinlik Adı" />
+        <input formControlName="category" placeholder="Kategori" />
+        <input formControlName="startDate" type="datetime-local" />
+        <input formControlName="endDate" type="datetime-local" />
+        <input formControlName="location" placeholder="Lokasyon" />
+        <input formControlName="price" type="number" placeholder="Fiyat" />
+        <input formControlName="totalCapacity" type="number" placeholder="Toplam Kapasite" />
+        <button type="submit">Ekle</button>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2>Etkinlik Sil</h2>
+      <form [formGroup]="eventDeleteForm" (ngSubmit)="deleteEvent()">
+        <input formControlName="eventId" type="number" placeholder="Etkinlik ID" />
+        <button type="submit">Sil</button>
+      </form>
+
+      <h2>İndirim Sil</h2>
+      <form [formGroup]="discountDeleteForm" (ngSubmit)="deleteDiscount()">
+        <input formControlName="discountId" type="number" placeholder="İndirim ID" />
+        <button type="submit">Sil</button>
+      </form>
+
+      <h2>Etkinliğe İndirim Tanımla</h2>
+      <form [formGroup]="assignForm" (ngSubmit)="addDiscountToEvent()">
+        <input formControlName="eventId" type="number" placeholder="Etkinlik ID" />
+        <input formControlName="discountId" type="number" placeholder="İndirim ID" />
+        <button type="submit">Tanımla</button>
+      </form>
+    </div>
+
+    <div class="admin-card">
+      <h2>İndirim Ekle</h2>
+      <form [formGroup]="discountForm" (ngSubmit)="insertDiscount()">
+        <input formControlName="discountName" placeholder="İndirim Adı" />
+        <input formControlName="discountType" placeholder="Tip (campain/personal)" />
+        <input formControlName="percentage" type="number" placeholder="Yüzde" />
+        <input formControlName="startDate" type="datetime-local" />
+        <input formControlName="endDate" type="datetime-local" />
+        <button type="submit">Ekle</button>
+      </form>
+    </div>
+  </div>
+</div>
