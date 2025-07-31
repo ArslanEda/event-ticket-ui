@@ -57,7 +57,9 @@ export class EventListComponent implements OnInit {
 
   handlePurchase(eventId: number) {
     const form = this.quantityForm[eventId];
-    if (!form.valid) return alert('Geçerli bir adet girin.');
+    if (!form.valid){
+      return alert('Geçerli bir adet girin.'); 
+    } 
 
     const quantity = form.value.quantity;
 

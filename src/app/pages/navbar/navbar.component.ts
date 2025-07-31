@@ -17,12 +17,14 @@ export class NavbarComponent {
   constructor(private router: Router) { }
 
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('authorizationToken');
+    return localStorage.getItem('authorizationToken') !== null;
   }
 
   isAdmin(): boolean {
     const token = localStorage.getItem('authorizationToken');
-    if (!token) return false;
+    if (!token){
+      return false;  
+    } 
     const decoded: any = jwtDecode(token);
     return decoded["http://schemas.microsoft.com/ws/2008/06/identity/claims/role"] === 'admin';
   }

@@ -6,7 +6,7 @@
       <h2>Etkinlik Ekle</h2>
       <form [formGroup]="eventForm" (ngSubmit)="insertEvent()">
         <input formControlName="name" placeholder="Etkinlik Adı" />
-        <input formControlName="category" placeholder="Kategori" />
+        <input formControlName="category" placeholder="Kategori(Konser, Tiyatro, Festival, Teknoloji)" />
         <input formControlName="startDate" type="datetime-local" />
         <input formControlName="endDate" type="datetime-local" />
         <input formControlName="location" placeholder="Lokasyon" />

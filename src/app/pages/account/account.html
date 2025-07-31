@@ -1,13 +1,17 @@
-<div class="account-section">
-  <div *ngIf="purchases.length > 0; else noData">
-    <div *ngFor="let ticket of purchases" class="ticket-card">
-      <p><strong>Etkinlik ID:</strong> {{ ticket.eventId }}</p>
-      <p><strong>Adet:</strong> {{ ticket.quantity }}</p>
-      <p><strong>Toplam:</strong> {{ ticket.totalPrice | currency:'TRY' }}</p>
+<div class="gif-container">
+  <img src="assets/event.jpg" class="background-img">
+  <div class="overlay"></div>
+  <div class="account-section">
+    <div *ngIf="purchases.length > 0; else noData">
+      <div *ngFor="let ticket of purchases" class="ticket-card">
+        <p><strong>Etkinlik ID:</strong> {{ ticket.eventId }}</p>
+        <p><strong>Adet:</strong> {{ ticket.quantity }}</p>
+        <p><strong>Toplam:</strong> {{ ticket.totalPrice | currency:'TRY' }}</p>
+      </div>
     </div>
-  </div>
 
-  <ng-template #noData>
-    <p>Geçmiş sipariş bulunamadı.</p>
-  </ng-template>
+    <ng-template #noData>
+      <p>Geçmiş sipariş bulunamadı.</p>
+    </ng-template>
+  </div>
 </div>
